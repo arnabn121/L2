@@ -1,0 +1,49 @@
+
+#Skriven av Arnab Nandi och Alexandros Simeonidis
+
+def konvertera(avstånd):
+    return round(avstånd*0.6214,2)
+
+
+while True:
+    print("Ange avstånd i kilometer:", end=" ")
+    try:
+        kilometer = float(input())
+    except :
+        print("Felaktig input")
+        continue
+    if kilometer < 0:
+        print('Måste vara större än 0')
+        continue
+    break
+
+print("Miles: " + str(konvertera(kilometer)))
+
+
+#Skriven av Arnab Nandi och Alexandros Simeonidis
+
+
+def stadiumSeating(lista):
+    return lista[0] * 290 + lista[1] * 220 + lista[2] * 140
+
+
+antalPlatser = []
+bokstav = ["A", "B", "C"]
+i = 0
+
+while True:
+    if i == 3:
+        break
+    try:
+        print("Ange antalet platser i " + bokstav[i] + ":", end=" ")
+        platser = int(input())
+    except:
+        print("Felaktig input")
+        continue
+    if platser<0:
+        print("Antalet platser kan inte vara negativt")
+        continue
+    antalPlatser.append(platser)
+    i += 1
+
+print("Intäkter: " + str(stadiumSeating(antalPlatser)) + " kr")
