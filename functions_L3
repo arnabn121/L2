@@ -1,0 +1,17 @@
+
+#Skriven av Arnab Nandi och Alexandros Simeonidis
+
+def readFile(filename):
+    with open(filename,"r",encoding="latin-1") as f:
+        textWords=f.read().strip().split()
+        return textWords
+
+def remove_commonwords(textwords,commonwords):
+    uncommonwords=[x for x in textwords if x not in commonwords]
+    return uncommonwords
+
+def stat(list):
+    antalord = len(readFile(list))
+    antaluncommonwords = len(remove_commonwords(readFile(list),readFile("vanligaord.txt")))
+    return [antalord, antaluncommonwords]
+
