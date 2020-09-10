@@ -1,0 +1,22 @@
+
+#Skriven av Arnab Nandi och Alexandros Simeonidis
+
+
+from functions_L4 import readFile, remove_commonwords, stat
+
+while True:
+    try:
+        print("Vilken fil vill du läsa in?: ", end="")
+        filnamn = input()
+        filnamn = filnamn + ".txt"
+        uncommon = remove_commonwords(readFile(filnamn), readFile("vanligaord.txt"))
+        s = stat(filnamn)
+    except:
+        print("Filen hittades ej, försök igen")
+        continue
+    break
+print("Texten innehåller " + str(s[0]) + " ord")
+print("Funnit " + str(s[1]) + " ovanliga ord:")
+
+for i in uncommon:
+    print(i)
